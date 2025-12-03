@@ -2,3 +2,5 @@ spacy
 python-dateutil
 fuzzywuzzy[speedup]
 rapidfuzz
+streamlit 
+groq

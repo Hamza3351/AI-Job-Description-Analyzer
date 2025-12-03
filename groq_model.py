@@ -1,7 +1,7 @@
 from groq import Groq
 import os
 
-#Make sure you set your API key as an environment variable, then check if it's set correctly using:
+#Make sure you set your API key as an environment variable using:
 #export GROQ_API_KEY="your_api_key_here"
 
 api_key = os.getenv("GROQ_API_KEY")
