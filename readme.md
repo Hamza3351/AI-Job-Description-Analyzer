@@ -7,46 +7,43 @@
   <img src="https://img.shields.io/badge/Streamlit-App-red?style=for-the-badge" />
 </p>
 
-A powerful NLP + LLM-powered tool that analyzes a Job Description and a Resume, compares skills, computes match percentage, highlights missing skills, and generates AI-optimized resume improvement suggestions.
+A **high-precision NLP + LLM-powered analyzer** that compares a **Job Description** and a **Resume**, extracts skills, computes match %, identifies gaps, and generates **AI-optimized resume improvement suggestions** powered by **Groq’s ultra-fast Llama 3.1 70B**.
 
-Built with **Python, spaCy, RapidFuzz, Groq LPU inference, and Streamlit**.
+---
 
-🚀 **Features**
----------------
+## 🚀 **Features**
+- **Extracts skills & keywords** (spaCy + custom parsing)
+  
+- Computes:
+  - **Match %**
+  - **Missing Skills**
+  - **Matched Skills**
+  - **Resume Score**
+    
+- Generates:
+  - **3 Resume Bullet Suggestions**
+  - **1 Professional Headline**
+  - **1 Rationale Summary**
+    
+- Modern **Streamlit UI** with color-coded sections & skill badges
 
-*   Extracts skills & keywords from both JD and Resume
-    
-*   Computes:
-    
-    *   **Match Percentage**
-    *   **Missing Skills**
-    *   **Matched Skills**
-    *   **Resume Score**
-        
-*   Generates:
-    
-    *   **Smart resume improvement bullets**  
-    *   **A professional headline**
-    *   **A rational explanation of the match**
-        
-*   Clean, modern **UI with colored sections and skill badges**
-    
-*   Fully local processing except LLM suggestions
-    
+- **Fully free** (no paid APIs) — uses **Groq free tier**
 
-🧰 **Tech Stack**
------------------
-
-*   **Python 3.10+**
-*   **spaCy** for NLP
-*   **RapidFuzz** for fuzzy skill matching
-*   **Groq API (Llama 3.1 70B)** for AI suggestions
-*   **Streamlit** for the UI
-*   **HTML + inline CSS** for styling
+---
     
+## 🧰 **Tech Stack**
+| Component | Used For |
+|----------|----------|
+| **Python 3.10+** | Core logic |
+| **spaCy** | NLP skill extraction |
+| **RapidFuzz** | Fuzzy skill matching |
+| **Groq API (Llama 3.1 70B)** | Resume suggestions |
+| **Streamlit** | Frontend UI |
+| **Inline CSS + HTML** | Custom styling |
 
-📂 **Project Structure**
-------------------------
+---
+
+## 📂 **Project Structure**
 ```
  ai_job_analyzer/
 │── analyzer.py          
@@ -59,73 +56,82 @@ Built with **Python, spaCy, RapidFuzz, Groq LPU inference, and Streamlit**.
 │── README.md
 ```
 
-🖥️ **How It Works**
---------------------
 
-### 1️⃣ Extract Candidate Skills
+---
 
-Using spaCy noun-chunks + entities + token filtering.
+## 🖥️ **How It Works**
 
-### 2️⃣ Compute Match %
+### **1️⃣ Skill Extraction**
+✔ Noun chunks  
+✔ Entities  
+✔ Token-based filtering  
+✔ Normalization + cleaning  
 
-Compares JD vs Resume skill tokens using RapidFuzz.
+---
 
-### 3️⃣ Generate AI Suggestions
+### **2️⃣ Skill Matching (JD → Resume)**
+Uses **RapidFuzz** token-sort ratio to compute:
 
-Uses Groq Llama 3.1 70B to create:
+- Match %
+- Missing skills
+- Matched pairs
 
-*   3 resume bullets 
-*   1 headline
-*   1 rationale
-    
+---
 
-### 4️⃣ Present Output in Beautiful UI
+### **3️⃣ AI Suggestion Generation**
+Groq Llama 3.1 70B produces:
 
-Sections:
+- 3 resume bullets (10–15 words)
+- A strong headline
+- A rationale explaining the match score
 
-*   Skills extracted   
-*   Missing skills as badges  
-*   Match & resume scores
-*   AI resume suggestions
-    
+---
 
-▶️ **Run Locally**
-------------------
+### **4️⃣ UI Presentation**
+Streamlit displays:
 
-### **Install packages**
+- Extracted skills  
+- Missing skills as colored badges  
+- Match %  
+- Resume score  
+- AI recommendations  
 
-```   
+---
+
+## ▶️ **Run Locally**
+
+### **Install Dependencies**
+```
 pip install -r requirements.txt
-pip install streamlit groq
 python -m spacy download en_core_web_sm
 ```
+---
 
-### **Run Streamlit app**
-
+### **Launch the Streamlit App**
 ```
 streamlit run app.py
 ```
+---
 
-🔑 **Setup Groq API Key**
--------------------------
-
+## 🔑 **Setup Groq API Key**
 Login to your groq dashborad and then create new API key. Copy that key and then set it as an environment variable using:
 
+### **Mac/Linux (bash/zsh)**
 ```
-export GROQ_API_KEY="your_api_key_here" (FOR Linux/Mac)
+export GROQ_API_KEY="your_api_key_here" 
 ```
+### **Windows Powershell**
 ```
-setx GROQ_API_KEY "your_api_key_here" (FOR Powershell)
+setx GROQ_API_KEY "your_api_key_here" 
 ```
 
-After that kill your terminal and reopen to ensure changes, also run the below to check:
+After that Then restart your terminal and verify:
 ```
 echo $env:GROQ_API_KEY
 ```
+---
 
-
-📝 **Example Inputs**
----------------------
+## 📝 **Example Inputs**
 
 ### Job Description (JD)
 ```
@@ -147,33 +153,36 @@ and deployed small-scale data applications on AWS. I am familiar with relational
 basic CI/CD pipelines, and some cloud infrastructure tools. I have collaborated with small teams 
 on several projects, focusing on data processing and analysis.
 ```
+---
 
-⭐ **Future Improvements**
--------------------------
+## ⭐ **Future Improvements**
 
 *   Skill ontology mapping
 *   Support for PDF/Docx uploads
 *   ATS score
 *   Resume rewriting
 *   Multi-language support
+---
 
-
-🤝 **Contributing**
--------------------
+## 🤝 **Contributing**
 
 Pull requests are welcome!
+If you want to extend this into a SaaS product, feel free to reach out.
 
-📹 **Demo Video**
--------------------
+---
 
-Youtube:
+## 📹 **Demo Video**
 
-📬 **Contact**
---------------
+Coming soon on YouTube 📺
 
-If you want this as a SaaS product or need customization, feel free to contact me.
+---
 
-📄 **License**
---------------
+## 📬 **Contact**
+
+For customization or freelance work, reach out anytime.
+
+---
+
+## 📄 **License**
 
 MIT
