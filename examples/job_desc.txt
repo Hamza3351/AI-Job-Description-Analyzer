@@ -1,0 +1,8 @@
+We are seeking a Senior Data Engineer with 5+ years of experience in Python development and data engineering. 
+The candidate should have experience with cloud-based solutions, building scalable data pipelines, 
+working with cross-functional teams, ETL workflows, and ensuring data quality, integrity, and performance. 
+Strong knowledge of distributed systems, automated testing, CI/CD pipelines, and production deployments 
+on cloud platforms (AWS, GCP, or Azure) is required. Familiarity with data applications, documentation 
+of technical specifications and best practices, relational databases, NoSQL databases (MongoDB), 
+REST APIs, microservices, message queues (Kafka), cloud infrastructure, DevOps tools, Kubernetes, Terraform, 
+and other CI/CD tools is strongly preferred.

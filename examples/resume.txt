@@ -1,0 +1,5 @@
+I am a software engineer with 3 years of experience in Python and SQL. 
+I have built ETL pipelines, used Docker and Kubernetes for containerized deployment, 
+and deployed small-scale data applications on AWS. I am familiar with relational databases, 
+basic CI/CD pipelines, and some cloud infrastructure tools. I have collaborated with small teams 
+on several projects, focusing on data processing and analysis.
