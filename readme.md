@@ -1,5 +1,11 @@
 **AI Job Match Analyzer**
 ==============================
+<p align="center">
+  <img src="https://img.shields.io/badge/LLM-Llama3.1_70B-orange?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Groq-LPU_Inference-blue?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Python-3.10+-green?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Streamlit-App-red?style=for-the-badge" />
+</p>
 
 A powerful NLP + LLM-powered tool that analyzes a Job Description and a Resume, compares skills, computes match percentage, highlights missing skills, and generates AI-optimized resume improvement suggestions.
 
@@ -13,19 +19,14 @@ Built with **Python, spaCy, RapidFuzz, Groq LPU inference, and Streamlit**.
 *   Computes:
     
     *   **Match Percentage**
-        
     *   **Missing Skills**
-        
     *   **Matched Skills**
-        
     *   **Resume Score**
         
 *   Generates:
     
-    *   **Smart resume improvement bullets**
-        
+    *   **Smart resume improvement bullets**  
     *   **A professional headline**
-        
     *   **A rational explanation of the match**
         
 *   Clean, modern **UI with colored sections and skill badges**
@@ -37,22 +38,26 @@ Built with **Python, spaCy, RapidFuzz, Groq LPU inference, and Streamlit**.
 -----------------
 
 *   **Python 3.10+**
-    
 *   **spaCy** for NLP
-    
 *   **RapidFuzz** for fuzzy skill matching
-    
 *   **Groq API (Llama 3.1 70B)** for AI suggestions
-    
 *   **Streamlit** for the UI
-    
 *   **HTML + inline CSS** for styling
     
 
 📂 **Project Structure**
 ------------------------
-
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   ai_job_analyzer/  │── analyzer.py          # Core logic: NLP, matching, scoring, LLM suggestions  │── model_interface.py   # Groq model wrapper  │── app.py               # Streamlit UI  │── requirements.txt  │── demo_output_examples/  │     └── example_output.json  │── README.md   `
+```
+ ai_job_analyzer/
+│── analyzer.py          
+│── model_interface.py   
+│── app.py               
+│── requirements.txt
+│── examples/
+│     └── job_desc.txt
+|     └── resume.txt
+│── README.md
+```
 
 🖥️ **How It Works**
 --------------------
@@ -69,10 +74,8 @@ Compares JD vs Resume skill tokens using RapidFuzz.
 
 Uses Groq Llama 3.1 70B to create:
 
-*   3 resume bullets
-    
+*   3 resume bullets 
 *   1 headline
-    
 *   1 rationale
     
 
@@ -80,12 +83,9 @@ Uses Groq Llama 3.1 70B to create:
 
 Sections:
 
-*   Skills extracted
-    
-*   Missing skills as badges
-    
+*   Skills extracted   
+*   Missing skills as badges  
 *   Match & resume scores
-    
 *   AI resume suggestions
     
 
@@ -94,55 +94,86 @@ Sections:
 
 ### **Install packages**
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   pip install -r requirements.txt   `
+```   
+pip install -r requirements.txt
+pip install streamlit groq
+python -m spacy download en_core_web_sm
+```
 
 ### **Run Streamlit app**
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   streamlit run app.py   `
+```
+streamlit run app.py
+```
 
 🔑 **Setup Groq API Key**
 -------------------------
 
-Create .env file:
+Login to your groq dashborad and then create new API key. Copy that key and then set it as an environment variable using:
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   GROQ_API_KEY=your_api_key_here   `
+```
+export GROQ_API_KEY="your_api_key_here" (FOR Linux/Mac)
+```
+```
+setx GROQ_API_KEY "your_api_key_here" (FOR Powershell)
+```
+
+After that kill your terminal and reopen to ensure changes, also run the below to check:
+```
+echo $env:GROQ_API_KEY
+```
+
 
 📝 **Example Inputs**
 ---------------------
 
 ### Job Description (JD)
-
-(Include the sample JD text you used in the demo)
+```
+We are seeking a Senior Data Engineer with 5+ years of experience in Python development and data engineering. 
+The candidate should have experience with cloud-based solutions, building scalable data pipelines, 
+working with cross-functional teams, ETL workflows, and ensuring data quality, integrity, and performance. 
+Strong knowledge of distributed systems, automated testing, CI/CD pipelines, and production deployments 
+on cloud platforms (AWS, GCP, or Azure) is required. Familiarity with data applications, documentation 
+of technical specifications and best practices, relational databases, NoSQL databases (MongoDB), 
+REST APIs, microservices, message queues (Kafka), cloud infrastructure, DevOps tools, Kubernetes, Terraform, 
+and other CI/CD tools is strongly preferred.
+```
 
 ### Resume
-
-(Include the sample resume text you used)
-
-📸 **Demo Screenshot (Optional)**
----------------------------------
-
-Add a screenshot of your tool here.
+```
+I am a software engineer with 3 years of experience in Python and SQL. 
+I have built ETL pipelines, used Docker and Kubernetes for containerized deployment, 
+and deployed small-scale data applications on AWS. I am familiar with relational databases, 
+basic CI/CD pipelines, and some cloud infrastructure tools. I have collaborated with small teams 
+on several projects, focusing on data processing and analysis.
+```
 
 ⭐ **Future Improvements**
 -------------------------
 
 *   Skill ontology mapping
-    
 *   Support for PDF/Docx uploads
-    
 *   ATS score
-    
 *   Resume rewriting
-    
 *   Multi-language support
-    
+
 
 🤝 **Contributing**
 -------------------
 
 Pull requests are welcome!
 
+📹 **Demo Video**
+-------------------
+
+Youtube:
+
 📬 **Contact**
 --------------
 
 If you want this as a SaaS product or need customization, feel free to contact me.
+
+📄 **License**
+--------------
+
+MIT
