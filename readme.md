@@ -114,6 +114,12 @@ streamlit run app.py
 ---
 
 ## 🔑 **Setup Groq API Key**
+</br>
+
+>[!IMPORTANT]
+>You must set your Groq API key as an environment variable.
+
+</br>
 Login to your groq dashborad and then create new API key. Copy that key and then set it as an environment variable using:
 
 ### **Mac/Linux (bash/zsh)**
@@ -166,7 +172,7 @@ on several projects, focusing on data processing and analysis.
 
 ## 🤝 **Contributing**
 
-Pull requests are welcome!
+Pull requests are welcome!\
 If you want to extend this into a SaaS product, feel free to reach out.
 
 ---
