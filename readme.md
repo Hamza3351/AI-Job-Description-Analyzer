@@ -7,7 +7,7 @@
   <img src="https://img.shields.io/badge/Streamlit-App-red?style=for-the-badge" />
 </p>
 
-A **high-precision NLP + LLM-powered analyzer** that compares a **Job Description** and a **Resume**, extracts skills, computes match %, identifies gaps, and generates **AI-optimized resume improvement suggestions** powered by **Groq’s ultra-fast Llama 3.1 70B**.
+A **high-precision NLP + LLM-powered analyzer** that compares a **Job Description** and a **Resume**, extracts skills, computes match %, identifies gaps, and generates **AI-optimized resume improvement suggestions** powered by **Groq’s ultra-fast llama-3.3-70b-versatile**.
 
 ---
 
@@ -37,7 +37,7 @@ A **high-precision NLP + LLM-powered analyzer** that compares a **Job Descriptio
 | **Python 3.10+** | Core logic |
 | **spaCy** | NLP skill extraction |
 | **RapidFuzz** | Fuzzy skill matching |
-| **Groq API (Llama 3.1 70B)** | Resume suggestions |
+| **Groq API (llama-3.3-70b-versatile)** | Resume suggestions |
 | **Streamlit** | Frontend UI |
 | **Inline CSS + HTML** | Custom styling |
 
@@ -47,7 +47,7 @@ A **high-precision NLP + LLM-powered analyzer** that compares a **Job Descriptio
 ```
  ai_job_analyzer/
 │── analyzer.py          
-│── model_interface.py   
+│── groq_model.py   
 │── app.py               
 │── requirements.txt
 │── examples/
@@ -79,7 +79,7 @@ Uses **RapidFuzz** token-sort ratio to compute:
 ---
 
 ### **3️⃣ AI Suggestion Generation**
-Groq Llama 3.1 70B produces:
+Groq llama-3.3-70b-versatile produces:
 
 - 3 resume bullets (10–15 words)
 - A strong headline
@@ -118,6 +118,7 @@ streamlit run app.py
 
 >[!IMPORTANT]
 >You must set your Groq API key as an environment variable.
+>If you get any model error, you need to update the model version as they get decommissioned
 
 </br>
 Login to your groq dashborad and then create new API key. Copy that key and then set it as an environment variable using:
