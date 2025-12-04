@@ -2,7 +2,7 @@ import argparse, json, re, os
 from collections import Counter
 from rapidfuzz import fuzz
 import spacy
-from model_interface import generate
+from groq_model import generate
 
 nlp = spacy.load("en_core_web_sm")
 
