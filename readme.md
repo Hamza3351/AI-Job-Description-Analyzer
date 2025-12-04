@@ -1,7 +1,7 @@
 **AI Job Match Analyzer**
 ==============================
 <p align="center">
-  <img src="https://img.shields.io/badge/LLM-Llama3.1_70B-orange?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/LLM-Llama3.3_70B-orange?style=for-the-badge" />
   <img src="https://img.shields.io/badge/Groq-LPU_Inference-blue?style=for-the-badge" />
   <img src="https://img.shields.io/badge/Python-3.10+-green?style=for-the-badge" />
   <img src="https://img.shields.io/badge/Streamlit-App-red?style=for-the-badge" />
