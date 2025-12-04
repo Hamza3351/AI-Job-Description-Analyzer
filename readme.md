@@ -180,7 +180,7 @@ If you want to extend this into a SaaS product, feel free to reach out.
 
 ## 📹 **Demo Video**
 
-Coming soon on YouTube 📺
+Youtube: https://youtu.be/DylXv4J95Tg?si=RAFuCmrrMSM-4TvP
 
 ---
 
